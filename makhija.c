@@ -26,3 +26,34 @@ void roundRobin(){
 			}
 			else;
 		}
+int start = mark+1;
+		for(rc= start; rc<mc; rc++){
+			if(m[rc].at <= time){
+				mark++;
+			}
+		}
+	}	
+}
+
+void merger(){
+	int isc=0, ifc= 0, min, flag;
+	if( fc!=0  && sc!=0){
+		while(isc<sc && ifc<fc){
+			if(f[ifc].at == s[isc].at){
+				m[mc] = f[ifc];
+				mc++;
+				ifc++;
+				m[mc]= s[isc];
+				mc++;
+				isc++;
+			}
+			else if(f[ifc].at < s[isc].at){
+				m[mc]= f[ifc];
+				mc++;
+				ifc++;
+			}
+			else if(f[ifc].at > s[isc].at){
+				m[mc]= s[isc];
+				mc++;
+				isc++;
+			}
